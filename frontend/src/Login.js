@@ -75,7 +75,7 @@ function Login() {
                 placeholder="Password"
                 required
               />
-              <a className="text-primary" href="/forgot-password">
+              <a className="text-primary mt-3" href="/forgot-password">
                 Forgot password
               </a>
             </div>
