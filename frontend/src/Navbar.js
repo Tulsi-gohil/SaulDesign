@@ -17,9 +17,12 @@ function Navbar() {
 
       <div className="collapse navbar-collapse justify-content-end " id="nav">
         <ul className="navbar-nav ">
-          <li className="nav-item"><a href="#home" className="nav-link text-white">Home</a> </li>
-          <li className="nav-item"><a href="#about" className="nav-link text-white">About</a> </li>
-          <li className="nav-item"><a href="#contact" className="nav-link text-white">Contact</a>
+          <li className="nav-item"><a href="/" className="nav-link text-white">Home</a> </li>
+          <li className="nav-item"><a href="about" className="nav-link text-white">About</a> </li>
+          <li className="nav-item"><a href="contact" className="nav-link text-white">Contact</a></li>
+          <li className="nav-item"><a href="Login" className="nav-link text-white">Login</a></li>
+          <li className="nav-item"><a href="/Signup" className="nav-link text-white">Signup</a>
+
  </li>
         </ul>
       </div>

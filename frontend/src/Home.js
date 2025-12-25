@@ -67,7 +67,7 @@ function Home() {
   return (
     <div>
       {/* HERO */}
-      <section id="Home" className="hero-section d-flex align-items-center">
+      <section className="hero-section d-flex align-items-center">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-md-6 text-white">

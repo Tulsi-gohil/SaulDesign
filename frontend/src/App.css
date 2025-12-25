@@ -1,5 +1,6 @@
 body {
  background-color: #222831;
+ color:#fff;
 }
 .navbar {
   height: 70px;
@@ -384,4 +385,14 @@ body {
   .footer-link {
     justify-content: center;
   }
+}
+.form-control {
+  background: #2a323d;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  padding: 12px;
+}
+.card {
+  background-color: #1f2630;
 }
