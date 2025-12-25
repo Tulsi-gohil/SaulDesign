@@ -1,15 +1,18 @@
 import { useState } from "react";
 import axios from "axios";
+ import "./App.css";
+import { useNavigate } from "react-router-dom";
 
-import "./App.css";
 function Signup() {
-   const [formData, setFormData] = useState({
+ const navigate =  useNavigate();
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
   });
 
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,37 +20,52 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setMessage("");
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/Signup",
+        "http://localhost:5000/api/auth/signup",
         formData
       );
 
-      setMessage(res.data.message);
+      setMessage(res.data.message || "Signup successful 🎉");
+  navigate('./');
     } catch (err) {
       setMessage(
-        err.response?.data?.message || "Registration failed"
+        err.response?.data?.message || "Signup failed ❌"
       );
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <div className="container d-flex justify-content-center align-items-center min-vh-100">
-      <div className="card shadow p-4"  style={{ maxWidth: "400px", width: "100%" }}>
+      <div
+        className="card shadow p-4"
+        style={{ maxWidth: "400px", width: "100%" }}
+      >
         <h2 className="text-center text-white mb-4">Signup</h2>
-      {message && <p>{message}</p>}
 
-        <form method="post" onSubmit={handleSubmit} >
-          
+        {message && (
+          <div className="alert alert-info text-center">
+            {message}
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit}>
           {/* Full Name */}
           <div className="mb-3">
-            <label className="form-label text-white">Full Name</label>
+            <label className="form-label text-white">
+              Full Name
+            </label>
             <input
               type="text"
               name="name"
-              className="form-control "
+              className="form-control"
               placeholder="Enter Full Name"
+              value={formData.name}
               onChange={handleChange}
               required
             />
@@ -55,12 +73,15 @@ function Signup() {
 
           {/* Email */}
           <div className="mb-3">
-            <label className="form-label text-white">Email</label>
+            <label className="form-label text-white">
+              Email
+            </label>
             <input
               type="email"
               name="email"
               className="form-control"
               placeholder="Enter Email"
+              value={formData.email}
               onChange={handleChange}
               required
             />
@@ -68,23 +89,31 @@ function Signup() {
 
           {/* Password */}
           <div className="mb-3">
-            <label className="form-label text-white">Password</label>
+            <label className="form-label text-white">
+              Password
+            </label>
             <input
               type="password"
               name="password"
               className="form-control"
               placeholder="Enter Password"
+              value={formData.password}
               onChange={handleChange}
               required
             />
           </div>
 
-           
-
           {/* Submit Button */}
-          <button type="submit" className="btn btn-send w-100">
-            Signup
+          <button
+            type="submit"
+            className="btn btn-send w-100"
+            disabled={loading}
+          >
+            {loading ? "Signing up..." : "Signup"}
           </button>
+            <p className="signup-login-link text-center mt-3">
+          Already have an account? <a href="/Login">Log In</a>
+        </p>
         </form>
       </div>
     </div>
