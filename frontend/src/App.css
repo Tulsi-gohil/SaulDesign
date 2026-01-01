@@ -1,0 +1,398 @@
+body {
+ background-color: #222831;
+ color:#fff;
+}
+.navbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background-color: #222831;
+  color: #ffffff;
+  font-family: Oswald;
+}
+/* ===== TOGGLER BUTTON ===== */
+.navbar-toggler .toggler-icon {
+  border: 1px solid #ffffff;
+  text-align: right ;
+}
+.navbar-brand {
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 2.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+} 
+.navbar-nav{
+  gap: 9vh;
+}
+.nav-link {
+    display: block;
+    padding: 5rem 1rem;
+    color: #0d6efd;
+    font-size: 1.29rem;
+    text-decoration: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+ 
+.hero-section {
+  height: 100vh;
+   position: relative;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hero-title span {
+  color: #12c6c6;
+}
+
+.btn-hire {
+  background-color: #12c6c6;
+  color: white;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.btn-hire:hover {
+  background-color: #0fa5a5;
+  color: white;
+  font-weight: bold;
+
+}
+
+.btn-cv {
+  background-color: #2b3642;
+  color: white;
+  border-radius: 30px;
+  text-shadow: 10dvh;
+  padding: 12px 28px;
+  font-weight: bolder;
+  font-size: 14px;
+ }
+
+.hero-img {
+  max-width: 420px;
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 45px;
+  background: #2b3642;
+  color: white;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+/* Animation */
+.hero-title,
+.hero-buttons,
+.hero-img {
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-img {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 4;
+    transform: translateY(5);
+  }
+}
+.text2{
+  color:#12c6c6 ;
+}
+.about{
+  margin-top: 20vh;
+  background-color: #222831;
+}
+
+/* Right side */
+.about-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-right img {
+  max-width: 100%;
+  height: auto;
+}
+.about-text{
+  font-size: 8vh;
+}
+.about-subtitle{
+  font-size:3vh;
+}
+/* Section background */
+.works-section {
+  background-color: #1f2630;
+  background-image: url("./pattern.png"); /* optional */
+}
+
+/* Filter buttons */
+.btn-filter {
+  background: #2a323d;
+  color: #fff;
+  border-radius: 30px;
+  padding: 6px 20px;
+  border: none;
+}
+
+.btn-filter.active {
+  background: #00c2c7;
+  color: #000;
+}
+
+/* Card base */
+.work-card {
+  background: #2a323d;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+/* On scroll */
+.work-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delay animation */
+.delay-1 {
+  transition-delay: 0.2s;
+}
+
+.delay-2 {
+  transition-delay: 0.4s;
+}
+
+/* Hover effect */
+.work-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+/* Section */
+.contact-section {
+  background-color: #1f2630;
+}
+
+/* Inputs */
+.custom-input {
+  background: #2a323d;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  padding: 12px;
+}
+
+.custom-input::placeholder {
+  color: #9aa4b2;
+}
+
+.custom-input:focus {
+  background: #2a323d;
+  color: #fff;
+  box-shadow: none;
+  outline: 2px solid #00c2c7;
+}
+
+/* Button */
+.btn-send {
+  background: #00c2c7;
+  color: #000;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  border: none;
+}
+
+/* Animation base */
+.animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+/* On scroll */
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image */
+.contact-img {
+  max-width: 70%;
+}
+.footer-section {
+  background-color: #1f2630;
+}
+
+/* Links */
+.footer-link {
+  color: #cfd6e1;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-link:hover {
+  color: #00c2c7;
+}
+/* Social icons */
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background: #2a323d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background: #00c2c7;
+  color: #000;
+}
+
+/* Bottom */
+.footer-bottom {
+  border-top: 1px solid #2a323d;
+  padding-top: 15px;
+}
+
+/* Animation base */
+.footer-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.footer-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 {
+  transition-delay: 0.2s;
+}
+
+.delay-2 {
+  transition-delay: 0.4s;
+}
+@media (max-width: 768px) {
+
+  .hero-title {
+    font-size: 42px;
+  }
+
+  .hero-img {
+    max-width: 320px;
+  }
+
+  .about-text {
+    font-size: 6vh;
+  }
+
+  .about-subtitle {
+    font-size: 3vh;
+  }
+
+  .contact-img {
+    max-width: 80%;
+  }
+}
+@media (max-width: 576px) {
+ 
+  /* Hero Section */
+  .hero-section {
+    height: auto;
+    padding: 80px 20px;
+    text-align: left;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-img {
+    max-width: 280px;
+    margin-top: 30px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* About Section */
+  .about {
+    margin-top: 10vh;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 5vh;
+  }
+
+  .about-subtitle {
+    font-size: 2.5vh;
+  }
+
+  /* Work Cards */
+  .work-card {
+    margin-bottom: 20px;
+  }
+
+  /* Contact */
+  .contact-img {
+    max-width: 100%;
+    margin-top: 30px;
+  }
+
+  /* Footer */
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-link {
+    justify-content: center;
+  }
+}
+.form-control {
+  background: #2a323d;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  padding: 12px;
+}
+.card {
+  background-color: #1f2630;
+}
