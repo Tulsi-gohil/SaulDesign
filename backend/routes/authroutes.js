@@ -3,11 +3,11 @@ const { Signup, Login, verifyOtp , ForgetPassword ,ResetPassword} = require("../
 
 const router = express.Router();
 
-router.post("/Signup", Signup);
+router.post("/Signup",Signup);
 router.post("/Login",Login);
-router.post("/otpverify", verifyOtp);
-router.post("/ForgetPassword", ForgetPassword) ;
-router.post("/ResetPassword/:token", ResetPassword);
+router.post("/otpverify",verifyOtp);
+router.post("/ForgetPassword",ForgetPassword) ;
+router.post("/ResetPassword/:token",ResetPassword);
 
 module.exports = router;
     

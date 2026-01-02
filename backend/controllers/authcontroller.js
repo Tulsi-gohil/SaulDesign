@@ -5,7 +5,7 @@ const sendEmail = require("../utils/emailserver");
 const fs = require("fs");
 const path = require("path");
 const mjml = require("mjml"); 
- const otpStore = {};
+const otpStore = {};
 
 exports.Signup = async (req, res) => {
   try {
