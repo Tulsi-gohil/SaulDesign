@@ -24,34 +24,42 @@ function Signup() {
     });
   };
 
-  // Handle submit
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setMessage("");
+  e.preventDefault();
+  setLoading(true);
+  setMessage("");
 
-    try {
-      const res = await axios.post(
-        "https://sauldesign.onrender.com/api/auth/Signup",
-        formData
-      );
+  try {
+    const res = await axios.post(
+      "https://sauldesign.onrender.com/api/auth/Signup",
+      {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password
+      },
+      {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }
+    );
 
-      setMessage(res.data.message || "Signup successful 🎉");
+    setMessage(res.data.message || "Signup successful 🎉");
 
-      // Navigate to OTP verify page with email
-      navigate("/otpverify", {
-        state: { email: formData.email },
-      });
+    navigate("/otpverify", {
+      state: { email: formData.email },
+    });
 
-    } catch (err) {
-      console.log("Signup Error:", err.response?.data);
-      setMessage(
-        err.response?.data?.message || "Signup failed ❌"
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
+  } catch (err) {
+    console.log("Signup Error:", err.response?.data);
+    setMessage(
+      err.response?.data?.message || "Signup failed ❌"
+    );
+  } finally {
+    setLoading(false);
+  }
+};
+
 
 
   return (
