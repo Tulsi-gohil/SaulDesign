@@ -13,7 +13,7 @@ function ForgetPassword() {
     setMessage("");
 
     try {
-      const res = await axios.post(
+      const res = await axios.get(
         "https://sauldesign.onrender.com/api/auth/",
         {  email }
       );
