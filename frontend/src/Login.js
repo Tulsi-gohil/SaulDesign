@@ -22,7 +22,7 @@ function Login() {
     setMessage("");
 
     try {
-      const res = await axios.get(
+      const res = await axios.ge(
         "https://sauldesign.onrender.com/api/auth/Login",
         formData
       );

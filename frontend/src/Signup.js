@@ -31,7 +31,7 @@ function Signup() {
     setMessage("");
 
     try {
-      const res = await axios.get(
+      const res = await axios.post(
         "https://sauldesign.onrender.com/api/auth/Signup",
         formData
       );
