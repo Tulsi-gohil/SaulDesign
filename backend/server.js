@@ -6,7 +6,7 @@ const path = require("path");
 const sgMail = require("@sendgrid/mail");
 
 const dbcon = require("./libs/db");
-const authRouters = require("./routes/authroutes");
+const authRouters = require("../routes/authroutes");
 
 const app = express();
 
