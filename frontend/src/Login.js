@@ -23,7 +23,7 @@ function Login() {
 
     try {
       const res = await axios.ge(
-        "https://sauldesign.onrender.com/api/auth/Login",
+        "https://sauldesign.onrender.com/api/auth/login",
         formData
       );
 

@@ -23,7 +23,7 @@ function ResetPassword() {
 
     try {
       const res = await axios.post(
-        `https://sauldesign.onrender.com/api/auth/reset-password/${token}`,
+        `https://sauldesign.onrender.com/api/auth/resetpassword/${token}`,
         { password, confirmPassword }
       );
       setMessage(res.data.message || "Password reset successful ✅");
