@@ -31,7 +31,8 @@ function Signup() {
 
   try {
     const res = await axios.post(
-      "https://sauldesign.onrender.com/api/auth/Signup",
+      
+      "https://sauldesign.onrender.com/api/auth/signup",
       {
         name: formData.name,
         email: formData.email,
