@@ -6,7 +6,6 @@ const fs = require("fs");
 const path = require("path");
 const mjml = require("mjml"); 
 const otpStore = {};
-
 exports.Signup = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -22,7 +21,7 @@ exports.Signup = async (req, res) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    await User.create({
+    const user = await User.create({
       name,
       email,
       password: hashedPassword,
@@ -36,16 +35,15 @@ exports.Signup = async (req, res) => {
       expires: Date.now() + 5 * 60 * 1000,
     };
 
-    await sendEmail({
-      to: email,
-      subject: "Email Verification OTP",
-      html: `
-        <h2>Hello ${name}</h2>
-        <p>Your OTP is:</p>
-        <h1>${otp}</h1>
-        <p>This OTP is valid for 5 minutes.</p>
-      `,
-    });
+    try {
+      await sendEmail({
+        to: email,
+        subject: "Email Verification OTP",
+        html: `<h2>Your OTP is ${otp}</h2>`
+      });
+    } catch (mailError) {
+      console.log("Email failed but user created");
+    }
 
     res.status(201).json({
       success: true,
@@ -57,6 +55,7 @@ exports.Signup = async (req, res) => {
     res.status(500).json({ message: "Signup failed" });
   }
 };
+
 
 // ================= VERIFY OTP =================
 
