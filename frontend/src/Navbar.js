@@ -13,8 +13,8 @@ function Navbar() {
       <div className="collapse navbar-collapse justify-content-end" id="nav">
         <ul className="navbar-nav  ">
           <li className="nav-item"><Link className="nav-link text-white" to="/">Home</Link></li>
-          <li className="nav-item"><Link className="nav-link text-white" to="#about">About</Link></li>
-           <li className="nav-item"><Link className="nav-link text-white" to="#contact">Contact</Link></li>
+          <li className="nav-item"><Link className="nav-link text-white" to="/about">About</Link></li>
+           <li className="nav-item"><Link className="nav-link text-white" to="/contact">Contact</Link></li>
            <li className="nav-item"><Link className="nav-link text-white" to="/Signup">Signup</Link></li>
            <li className="nav-item"><Link className="nav-link text-white" to="/Login">Login</Link></li>
         </ul>
