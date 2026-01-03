@@ -55,9 +55,7 @@ exports.Signup = async (req, res) => {
     res.status(500).json({ message: "Signup failed" });
   }
 };
-
-// ================= VERIFY OTP =================
-
+ 
 exports.verifyOtp = async (req, res) => {
   try {
     const { email, otp } = req.body;
@@ -86,17 +84,25 @@ exports.verifyOtp = async (req, res) => {
       { new: true }
     );
 
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
     delete otpStore[email];
 
-    await sendEmail({
-      to: email,
-      subject: "Welcome to Our App 🎉",
-      html: `
-        <h2>Hello ${user.name}</h2>
-        <p>Your email has been verified successfully.</p>
-        <p>You can now login to your account.</p>
-      `,
-    });
+    try {
+      await sendEmail({
+        to: email,
+        subject: "Welcome to Our App 🎉",
+        html: `
+          <h2>Hello ${user.name}</h2>
+          <p>Your email has been verified successfully.</p>
+          <p>You can now login to your account.</p>
+        `,
+      });
+    } catch (err) {
+      console.log("Verification email failed");
+    }
 
     res.status(200).json({
       success: true,
