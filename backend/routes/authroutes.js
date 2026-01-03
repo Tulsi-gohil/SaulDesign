@@ -3,8 +3,8 @@ const { Signup, Login, verifyOtp , ForgetPassword ,ResetPassword} = require("../
 
 const router = express.Router();
 
-router.post("/Signup",Signup);
-router.post("/Login",Login);
+router.post("/signup",Signup);
+router.post("/login",Login);
 router.post("/otpverify",verifyOtp);
 router.post("/ForgetPassword",ForgetPassword) ;
 router.post("/ResetPassword/:token",ResetPassword);
