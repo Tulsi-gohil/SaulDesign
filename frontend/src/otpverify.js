@@ -6,23 +6,24 @@ function OtpVerify() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Get email from signup page
-  const email = location.state?.email;
+  // ✅ Get email safely (state OR localStorage)
+  const email =
+    location.state?.email || localStorage.getItem("otpEmail");
 
   const [otp, setOtp] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Redirect if email is not available
+  // ✅ Redirect if email is missing
   useEffect(() => {
     if (!email) {
       setMessage("No email found. Please signup first.");
-      setTimeout(() => navigate("/Signup"), 2000);
+      setTimeout(() => navigate("/signup"), 2000);
     }
   }, [email, navigate]);
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent page refresh
+    e.preventDefault();
     setLoading(true);
     setMessage("");
 
@@ -34,10 +35,14 @@ function OtpVerify() {
 
       setMessage(res.data.message || "OTP Verified ✅");
 
-      // Redirect to login after success
+      // ✅ Clear stored email after success
+      localStorage.removeItem("otpEmail");
+
       setTimeout(() => navigate("/login"), 1500);
     } catch (error) {
-      setMessage(error.response?.data?.message || "Invalid OTP ❌");
+      setMessage(
+        error.response?.data?.message || "Invalid OTP ❌"
+      );
     } finally {
       setLoading(false);
     }
