@@ -29,7 +29,7 @@ function OtpVerify() {
 
     try {
       const res = await axios.post(
-        "https://sauldesign.onrender.com/api/auth/verifyOtp",
+        "https://sauldesign.onrender.com/api/auth/verify-Otp",
         { email, otp }
       );
 
