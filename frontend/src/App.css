@@ -2,6 +2,17 @@ body {
  background-color: #222831;
  color:#fff;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Oswald;
+}
+
+/* ===== NAVBAR ===== */
 .navbar {
   height: 70px;
   display: flex;
@@ -10,32 +21,40 @@ body {
   padding: 0 40px;
   background-color: #222831;
   color: #ffffff;
-  font-family: Oswald;
 }
-/* ===== TOGGLER BUTTON ===== */
-.navbar-toggler .toggler-icon {
-  border: 1px solid #ffffff;
-  text-align: right ;
-}
+
+/* BRAND */
 .navbar-brand {
-    padding-top: .3125rem;
-    padding-bottom: .3125rem;
-    margin-right: 1rem;
-    font-size: 2.25rem;
-    text-decoration: none;
-    white-space: nowrap;
-} 
-.navbar-nav{
-  gap: 9vh;
+  font-size: 2rem;
+  color: #fff;
+  text-decoration: none;
 }
+
+/* NAV LINKS */
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
 .nav-link {
-    display: block;
-    padding: 5rem 1rem;
-    color: #0d6efd;
-    font-size: 1.29rem;
-    text-decoration: none;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-decoration: none;
 }
+
+.nav-link:hover {
+  color: #0d6efd;
+}
+
+/* TOGGLER */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+ 
  
 .hero-section {
   height: 100vh;
@@ -326,6 +345,30 @@ body {
 
   .contact-img {
     max-width: 80%;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-nav {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #222831;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .navbar-nav.active {
+    display: flex;
+  }
+
+  .nav-link {
+    font-size: 1.1rem;
   }
 }
 @media (max-width: 576px) {

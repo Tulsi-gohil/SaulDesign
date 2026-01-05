@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import "./App.css";
 
 function Navbar() {
+  
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("active");
+}
+ 
   return (
     <nav className="navbar navbar-expand-lg   px-4">
       <Link className="navbar-brand fw-bold text-white" to="/">SaulDesign</Link>
