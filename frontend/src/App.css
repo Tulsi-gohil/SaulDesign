@@ -2,59 +2,41 @@ body {
  background-color: #222831;
  color:#fff;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Oswald;
-}
-
-/* ===== NAVBAR ===== */
-.navbar {
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 40px;
+ .navbar {
+  min-height: 70px;
+  padding: 0 1.5rem;
   background-color: #222831;
-  color: #ffffff;
+  font-family: 'Oswald', sans-serif;
 }
 
-/* BRAND */
+/* ===== BRAND ===== */
 .navbar-brand {
   font-size: 2rem;
-  color: #fff;
-  text-decoration: none;
-}
-
-/* NAV LINKS */
-.navbar-nav {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-}
-
-.nav-link {
   color: #ffffff;
-  font-size: 1.2rem;
   text-decoration: none;
 }
 
-.nav-link:hover {
-  color: #0d6efd;
+/* ===== NAV LINKS ===== */
+.nav-link {
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
 }
 
-/* TOGGLER */
-.menu-toggle {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
+/* ===== NAV ITEMS SPACING ===== */
+.navbar-nav {
+  gap: 1rem;
 }
 
- 
+/* ===== TOGGLER BUTTON ===== */
+.navbar-toggler {
+  border: 1px solid #ffffff;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
  
 .hero-section {
   height: 100vh;
@@ -330,6 +312,23 @@ body {
   .hero-title {
     font-size: 42px;
   }
+   .navbar {
+    padding: 0 1rem;
+  }
+
+  .navbar-collapse {
+    background-color: #222831;
+    padding: 1rem 0;
+  }
+
+  .navbar-nav {
+    gap: 0.5rem;
+    text-align: left;
+  }
+
+  .nav-link {
+    padding: 0.75rem 0;
+  }
 
   .hero-img {
     max-width: 320px;
@@ -345,30 +344,6 @@ body {
 
   .contact-img {
     max-width: 80%;
-  }
-  .menu-toggle {
-    display: block;
-  }
-
-  .navbar-nav {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: #222831;
-    flex-direction: column;
-    align-items: center;
-    display: none;
-    gap: 20px;
-    padding: 20px 0;
-  }
-
-  .navbar-nav.active {
-    display: flex;
-  }
-
-  .nav-link {
-    font-size: 1.1rem;
   }
 }
 @media (max-width: 576px) {
