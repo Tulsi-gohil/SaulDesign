@@ -37,7 +37,6 @@ exports.Signup = async (req, res) => {
 
     try {
       await sendEmail({
-        from: process.env.EMAIL_USER,
         to: email,
         subject: "Email Verification OTP",
         html: `<h2>Your OTP is ${otp}</h2>`
