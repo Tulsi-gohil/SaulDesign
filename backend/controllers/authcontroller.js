@@ -32,7 +32,7 @@ exports.Signup = async (req, res) => {
 
     otpStore[email] = {
       otp,
-      expires: Date.now() + 5 * 60 * 1000,
+       expires: Date.now() + 10 * 60 * 1000,
     };
 
     try {
