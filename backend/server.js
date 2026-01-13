@@ -23,13 +23,7 @@ app.use(express.urlencoded({ extended: true })); // Parse form data
 dbcon();
 app.use("/api/auth", authRouters);
 
-/* ===== SENDGRID ===== */
-if (!process.env.SENDGRID_API_KEY) {
-  console.warn("⚠️ SendGrid API key missing");
-} else {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-}
-
+ 
 /* ===== TEST ===== */
 app.get("/", (req, res) => {
   res.send("Backend running 🚀");
